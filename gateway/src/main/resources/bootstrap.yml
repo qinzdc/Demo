@@ -1,9 +1,17 @@
 spring:
   application:
     name: gateway
-  cloud:
-    config:
-      uri: http://config:8888
-      fail-fast: true
-      password: ${CONFIG_SERVICE_PASSWORD}
-      username: user
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+zuul:
+  routes:
+    api-a:
+      path: /auth/**
+      serviceId: auth-service
+    api-b:
+      path: /account/**
+      serviceId: account-service
