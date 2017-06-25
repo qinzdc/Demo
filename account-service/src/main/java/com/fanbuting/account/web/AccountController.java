@@ -37,7 +37,7 @@ public class AccountController {
      *   application/json; charset=UTF-8
      *   body: {"id":1,"name":"aaa","money":1000.0}
      */
-    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    @RequestMapping(value = "/update2", method = RequestMethod.POST)
     public List<Account> updateAccount(@RequestBody Account account)
     {
     	if (null == account)
@@ -65,57 +65,57 @@ public class AccountController {
     	return rL;
     }
     
-
+//使用注解链接mysql
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public List<Account> getAccounts() {
         return accountService.findAccountList();
     }
-    
-    @RequestMapping(value = "/xxxx", method = RequestMethod.GET)
-    public String getAccounts1() {
-        return "x1";
-    }
+//    
+//    @RequestMapping(value = "/xxxx", method = RequestMethod.GET)
+//    public String getAccounts1() {
+//        return "x1";
+//    }
+//
+//    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
+//    public Account getAccountById(@PathVariable("id") int id) {
+//        return accountService.findAccount(id);
+//    }
+//
+//    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
+//    public String updateAccount(@PathVariable("id") int id, @RequestParam(value = "name", required = true) String name,
+//                                @RequestParam(value = "money", required = true) double money) {
+//        int t= accountService.update(name,money,id);
+//        if(t==1) {
+//            return "success";
+//        }else {
+//            return "fail";
+//        }
+//
+//    }
+//
+//    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
+//    public String delete(@PathVariable(value = "id")int id) {
+//        int t= accountService.delete(id);
+//        if(t==1) {
+//            return "success";
+//        }else {
+//            return "fail";
+//        }
+//
+//    }
 
-    @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public Account getAccountById(@PathVariable("id") int id) {
-        return accountService.findAccount(id);
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
-    public String updateAccount(@PathVariable("id") int id, @RequestParam(value = "name", required = true) String name,
-                                @RequestParam(value = "money", required = true) double money) {
-        int t= accountService.update(name,money,id);
-        if(t==1) {
-            return "success";
-        }else {
-            return "fail";
-        }
-
-    }
-
-    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-    public String delete(@PathVariable(value = "id")int id) {
-        int t= accountService.delete(id);
-        if(t==1) {
-            return "success";
-        }else {
-            return "fail";
-        }
-
-    }
-
-    @RequestMapping(value = "", method = RequestMethod.POST)
-    public String postAccount(@RequestParam(value = "name") String name,
-                              @RequestParam(value = "money") double money) {
-
-       int t= accountService.add(name,money);
-       if(t==1) {
-           return "success";
-       }else {
-           return "fail";
-       }
-
-    }
+//    @RequestMapping(value = "update", method = RequestMethod.POST)
+//    public String postAccount(@RequestParam(value = "name") String name,
+//                              @RequestParam(value = "money") double money) {
+//
+//       int t= accountService.add(name,money);
+//       if(t==1) {
+//           return "success";
+//       }else {
+//           return "fail";
+//       }
+//
+//    }
 
 
 }
