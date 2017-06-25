@@ -6,10 +6,12 @@ spring:
     username: qinzdc
     password: Huawei_123
     driver-class-name: com.mysql.jdbc.Driver
-
-eureka:
-  client:
-    serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+mybatis:
+  mapper-locations: classpath*:mybatis/*Mapper.xml
+  type-aliases-package: com.fanbuting.account.entity
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: http://localhost:8761/eureka/
 server:
   port: 8763
