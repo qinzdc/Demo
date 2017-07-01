@@ -4,7 +4,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fanbuting.account.dao.AccountMapper;
-import com.fanbuting.account.dao.AccountMapper2;
 import com.fanbuting.account.entity.Account;
 
 import java.util.List;
